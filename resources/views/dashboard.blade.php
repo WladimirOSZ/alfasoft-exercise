@@ -88,6 +88,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="mt-4 flex justify-center">
+                    {{ $contacts->links() }}
+                </div>
             @else
                 <p>No contacts yet. Add a contact.</p>
             @endif
