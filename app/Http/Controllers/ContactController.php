@@ -32,7 +32,7 @@ class ContactController extends Controller
 
     public function store(StoreContactRequest $request){
         ContactService::store($request);
-        return redirect()->route('contacts.index');
+        return redirect()->route('contacts.index')->with('message', 'Contact created successfully.');
     }
 
     public function edit(Contact $contact){
@@ -41,7 +41,7 @@ class ContactController extends Controller
 
     public function update(Contact $contact, StoreContactRequest $request){
         ContactService::update($contact, $request);
-        return redirect()->route('contacts.index');
+        return redirect()->route('contacts.index')->with('message', 'Contact updated successfully.');
     }
 
     public function destroy(Contact $contact){
