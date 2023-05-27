@@ -9,7 +9,7 @@
             <label for="contact-name" class="block text-sm font-medium text-gray-700">Contact name</label>
             <div class="mt-1">
                 <input type="text" name="name" id="contact-name" value="{{ old('name', $contact->name ?? '') }}"
-                    autocomplete="given-name"
+                    autocomplete="name"
                     class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 @error('name')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -19,8 +19,8 @@
         <div class="space-y-1">
             <label for="contact-phone" class="block text-sm font-medium text-gray-700">Phone number</label>
             <div class="mt-1">
-                <input type="text" name="contact" id="contact-phone"
-                    value="{{ old('contact', $contact->contact ?? '') }}" autocomplete="given-name"
+                <input type="text" name="contact" id="contact-phone" maxlength="9"
+                    value="{{ old('contact', $contact->contact ?? '') }}" autocomplete="number"
                     class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 @error('contact')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
